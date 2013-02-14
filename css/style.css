@@ -1,0 +1,25 @@
+body {
+	width: 320px;
+	height: auto:;
+}
+
+.space_closed {
+	background-color: #FFDEAD;
+	color: red;
+}
+
+.space_open {
+	background-color: #90EE90;
+	color: green;
+}
+
+p {
+	font-family: "Times New Roman", serif; 
+	text-align: center;
+}
+
+#space_message{
+	display: none;
+	word-wrap: break-word;
+	font-style: italic;
+}
