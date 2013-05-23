@@ -5,8 +5,6 @@ var settings = new Store("settings", {
 	"intervallList": i18n.get("fivem")
 });
 
-getStatus(true);
-
 chrome.extension.onMessage.addListener(
      function(request, sender, sendResponse)
      {
@@ -38,7 +36,7 @@ function getData(callBack){
 
 function getStatus(intervall) {
 	$.ajax({
-		url: 'https://hackerspacehb.appspot.com/status?format=de',
+		url: 'https://testhackerspacehb.appspot.com/status?format=de',
 		dataType: 'json',
 		success: function(data, textStatus, jqXHR){
 			var res = JSON.parse(jqXHR.responseText);
@@ -52,7 +50,9 @@ function getStatus(intervall) {
 			}else{
 				localStorage.message = res.RESULT.ST5;
 			}
-			showNotification(res.RESULT.ST3, res.RESULT.ST2);
+			// showNotification(res.RESULT.ST3, res.RESULT.ST2);
+      var notification = new Notification();
+      notification.show();
 			chrome.extension.sendMessage({name: res.RESULT.ST3, timeText: res.RESULT.ST2, message: res.RESULT.ST5});
 		}
 	});
@@ -81,31 +81,7 @@ function callGetStatus(){
 	getStatus(true);
 }
 
-function showNotification(givenStatus, givenTime){
-	// Create a simple text notification:
-	
-	if(typeof(localStorage.status) == 'undefined' || (givenTime != localStorage.time)){
-		localStorage.status = givenStatus;
-		localStorage.time = givenTime;
-		var notificationCheckbox = settings.get("notificationCheckbox");
-		if(notificationCheckbox){
-			var notification;
-			if(givenStatus=="OPEN"){
-				notification = webkitNotifications.createNotification(
-					'images/status_auf_48px.png', 
-					'Der Space ist offen!',  
-					givenTime
-				);
-			}else{
-			
-				notification = webkitNotifications.createNotification(
-					'images/status_zu_48px.png', 
-					'Der Space ist geschlossen!',  
-					givenTime
-				);
-			}
-			// Then show the notification.
-			notification.show();
-		}
-	}
-}
+var gcm = new GCM();
+gcm.initialize();
+
+getStatus(false);
