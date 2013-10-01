@@ -38,7 +38,7 @@ function getData(callBack){
 
 function getStatus(intervall) {
 	$.ajax({
-		url: 'https://hackerspacehb.appspot.com/status?format=de',
+		url: 'https://hackerspacehb.appspot.com/v2/status?format=de',
 		dataType: 'json',
 		success: function(data, textStatus, jqXHR){
 			var res = JSON.parse(jqXHR.responseText);
