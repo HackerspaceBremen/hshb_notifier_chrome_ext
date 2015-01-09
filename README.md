@@ -1,17 +1,17 @@
 hshb_notifier_chrome_ext
 ========================
 
-This repository holds the source code of the open space notifier chrome extension.
+This repository holds the source code of an chrome extension which talks with an [open space notifier](https://github.com/HackerspaceBremen/open_space_notifier) backend.
 
 Developed By
 ============
 
-* Steve Liedtke - <sliedtke57@gmail.com>
+* [dragondagda](https://github.com/dragondagda)
 
 License
 =======
 
-    Copyright (C) 2013 Steve Liedtke <sliedtke57@gmail.com>
+    Copyright (C) 2013-15 Steve Liedtke <sliedtke57@gmail.com>
  
 	This program is free software; you can redistribute it and/or modify it under the terms of the 
 	GNU General Public License as published by the Free Software Foundation; either version 3 of 
