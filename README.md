@@ -1,4 +1,4 @@
-hshb_notifier_chrome_ext
+Open Space Notifier - Chrome extension
 ========================
 
 This repository holds the source code of an chrome extension which talks with an [open space notifier](https://github.com/HackerspaceBremen/open_space_notifier) backend.
